@@ -1,18 +1,18 @@
 import React from 'react'
-import Component1 from './Components/Component1'
-import Context from './Components/Context'
-import Component2 from './Components/Component2'
-import Component3 from './Components/Component3'
-
+import { BrowserRouter, Routes,Route } from 'react-router-dom'
+import NoteHome from './NotePad/NoteHome'
+import NodeList from './NotePad/NoteList'
 
 const App = () => {
   return (
     <div>
-     
+      <BrowserRouter>
+     <Routes>
+      <Route path='/' Component={NoteHome}/>
+      <Route path='/notelist' Component={NodeList}/>
+     </Routes>
+      </BrowserRouter>
        
-        <Component1/>
-        <Component2/>
-        <Component3/>
         
      
     </div>
