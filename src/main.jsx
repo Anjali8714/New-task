@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 
-import store from './NotePad/NoteStore.jsx'
+import store from './TodoApp/store.jsx'
 import {Provider} from 'react-redux'
 
 createRoot(document.getElementById('root')).render(
