@@ -17,7 +17,8 @@ const TodoSlice = createSlice({
 
         },
         edittodo : (state ,action) => {
-            // state.value.map((edit) => edit.id = action.payload )
+            const {id,input} = action.payload
+           state.value= state.value.map((edit) => edit.id == id ?{id,text:input}:edit )
             
         }
     }

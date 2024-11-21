@@ -1,16 +1,25 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch ,useSelector } from 'react-redux'
 import {  edittodo } from './TodoSlice'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const Edittodo = () => {
     const dispatch =useDispatch()
-    const [input ,setInput] = useState('')
     const navigate = useNavigate()
+
+    const {id} = useParams()
+    
+    const todoinput = useSelector((state) => state.todos.value);
+    const todoip = todoinput.find((todo) => todo.id.toString() === id)
+    const [input ,setInput] = useState(todoip.text)
+  
+  
 
     const handleadd = () => {
         if(input.trim()){
-            dispatch(edittodo(input))
+            dispatch(edittodo({
+              id,input
+            }))
             navigate('/')
             setInput('')
             
