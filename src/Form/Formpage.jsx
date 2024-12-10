@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Formpage = () => {
     const {datas,setDatas} =useContext(FormContext)
+    
     const [name ,setName] = useState('');
     const [batch ,setBatch] = useState('');
     const [week ,setWeek] = useState('');

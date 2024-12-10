@@ -1,23 +1,22 @@
 import React from 'react'
 import { BrowserRouter, Routes,Route } from 'react-router-dom'
-import Home from './Form/Home'
-import Formpage from './Form/Formpage'
+import HomePAge from './Fitness Tracker/HomePAge'
 
 
 const App = () => {
   return (
     <div>
-      <BrowserRouter>
+      {/* <BrowserRouter>
      <Routes>
-      <Route path='/' Component={Home}/>
-      <Route path='formpage' Component={Formpage}/>
-     </Routes>
+      <Route path='/' Component={NoteHome}/>
+      <Route path='notelist' Component={NoteList}/>
+      </Routes>
       </BrowserRouter>
+{/* <NoteHome/> */}
 
-      
-       
-        
-     
+{/* <TodoList/> */} 
+
+<HomePAge/>
     </div>
   )
 }

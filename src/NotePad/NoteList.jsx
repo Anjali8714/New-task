@@ -15,7 +15,8 @@ const NoteList = () => {
       dispatch(
         additem({
           id:Date.now(),
-          note
+          note,
+          done:false
         })
       )
       navigate('/')

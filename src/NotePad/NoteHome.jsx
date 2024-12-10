@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useSelector ,useDispatch } from 'react-redux'
-import { deleted } from './NoteSlice'
+import { deleted ,taskdone} from './NoteSlice'
 
 const NoteHome = () => {
     const content = useSelector((state) => state.note.value)
@@ -17,8 +17,9 @@ const NoteHome = () => {
       <button className='text-5xl' onClick={() => navigate('/notelist')}>+</button>
     <ul>
         {content.map((con) => (
-            <li key={con.id}>
+            <li key={con.id} style={{backgroundColor:con.done?"red":"white"}}>
                 <p>{con.note}</p>
+                <button onClick={()=>dispatch(taskdone(con.id))}>Done</button>
                 <button onClick={() => handleDel(con.id)}>del</button>
             </li>
         ))}
